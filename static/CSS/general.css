@@ -1,0 +1,58 @@
+*,*:before,*:after{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+} 
+
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	font-family: 'Arial', monospace,sans-serif;
+	font-size: 1em;
+}
+
+input, button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.center{
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	justify-items: center;
+}
+
+.oneRow{
+	grid-template-rows: 1fr;
+	grid-auto-flow: column;
+	grid-auto-columns: auto;
+}
+
+.oneColumn{
+	grid-template-columns: 1fr;
+	grid-auto-flow: row;
+	grid-auto-rows: auto;
+}
+
+.block{display: block;}
+.fs-1_5{font-size: 1.5em;}
+.fs-2{font-size: 2em;}
+.iconColor{color: var(--iconColor);}
+.halfWidth{height: 100%; width: 50%;}
+.gap10{gap: 10px;}
+.maxSize{height: 100%;width: 100%;}
+.autoSize{height: auto;width: auto;}
+.autoMargin{margin: auto;}
+.grid{display: grid;}
+.invisible{display: none;}
+.hidden{visibility: hidden;}
+.displayNone{display: none;}
+.flex{display: flex;}
+.justifySelfEnd{justify-self: end;}
+.transition1s{transition: all 1s;}
+.rotate180deg{transform: rotate(180deg);}
+.hightIndex{z-index: 10;}
+.fa-solid,.nonSelect{user-select: none;}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'CSS/navBar.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/general.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/darkMode.css') }}" class="colorModeLink">
+	{% block styles %}{% endblock %}
+	<script src="https://kit.fontawesome.com/6ed718fff7.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	{% block title %}{% endblock %}
+</head>
+<body class="grid oneColumn">
+	<nav id="navBar" class="maxSize center">
+		<span id="logo" class="grid oneRow gap10 center">
+			<i class="icon fa-solid fa-earth-americas"></i>
+			<font class="title">Advance Search</font>
+		</span>
+		<span id="ligthDark" class="flex center">
+			<div class="maxSize flex center">
+				<input type="radio" name="lightDarkMode" value="lightMode" id="lightMode">
+				<i class="fa-icon fa-solid fa-moon transition1s"></i>
+				<input type="radio" name="lightDarkMode" value="darkMode" id="darkMode" checked>
+				<i class="fa-icon fa-solid fa-sun transition1s"></i>
+			</div>
+		</span>
+		{% block input %}{% endblock %}
+	</nav>
+	<section class="content maxSize">
+		{% block content %}{% endblock %}
+	</section>
+	<script src="{{ url_for('static', filename = 'JS/light_Dark_Mode.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'JS/navBar.js') }}"></script>
+	{% block scripts %}{% endblock %}
+</body> 
+</html>

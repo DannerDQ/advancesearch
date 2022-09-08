@@ -1,0 +1,38 @@
+body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 0;
+}
+
+#navBar {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#container {
+	height: fit-content;
+	width: fit-content;
+	grid-template-rows: 2fr 1fr;
+}
+
+#logo {margin: auto;}
+
+.input {
+	grid-template-columns: 1fr auto;
+}
+
+.input input {
+	padding-right: 5px;
+}
+
+.fileTypeContainer {
+	position: absolute;
+	top: 100%;
+	margin: 0 auto;
+	margin-top: 5px;
+	color: #FFF9;
+}
+
+.loaderContainerInit {position: absolute;}
