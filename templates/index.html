@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/variables.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/general.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/main.css') }}">
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/index.css') }}" class="bodyDistribution">
-	<script src="https://kit.fontawesome.com/6ed718fff7.js" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<title>Advance Search</title>
-</head>
-<body>
-	<nav id="navBar">
-		<section id="container">
-			<span id="logo">
-				<i class="fa-solid fa-earth-americas"></i>
-				<font class="title">Advance Search</font>
-			</span>
-			<section class="input grid oneRow center gap10">
-				<div class="fileTypeContainer nonSelect">
-					<span>
-						<font>Formato:
-							<b class="b">
-							</b>
-						</font>
-						<i class="fa-solid fa-angle-down"></i>
-					</span>
-					<ul id="fileTypeList" class="invisible">
-						<li id="texto">
-							<span class="maxSize">
-								<font>• Texto: </font>
-								<i class="fa-solid fa-angle-down"></i>
-							</span>
-							<div class="invisible grid oneColumn">
-								<label class="maxSize"><input type="radio" class="radio" value="pdf" name="fileType">PDF</label>
-								<label class="maxSize"><input type="radio" class="radio" value="doc" name="fileType">DOC</label>
-								<label class="maxSize"><input type="radio" class="radio" value="docx" name="fileType">DOCX</label>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<input type="search" class="maxSize" placeholder="Buscar..." id="search">
-				<i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
-			</section>
-		</section>
-	</nav>
-	<section class="results minSize">
-		<div class="loaderContainer maxSize flex center invisible">
-			<div class="flex center">
-				<span class="ldr-1"></span>
-				<span class="ldr-2"></span>
-				<span class="ldr-3"></span>
-				<span class="ldr-4"></span>
-				<span class="ldr-5"></span>
-				<span class="ldr-6"></span>
-				<span class="ldr-7"></span>
-				<span class="ldr-8"></span>
-			</div>
-		</div>
-	</section>
-	<audio src="{{ url_for('static', filename = 'audio/error-cut.mp3') }}" class="invisible" id="error"></audio>
-	<script src="{{ url_for('static', filename = 'JS/home.js') }}"></script>
-	<template id="newResult">
-		<div class="resultContainer">
-			<h3><a href="" target="_blank"></a></h3>
-			<p></p>
-		</div>
-	</template>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'CSS/variables.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'CSS/general.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'CSS/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'CSS/index.css') }}"
+      class="bodyDistribution"
+    />
+    <script
+      src="https://kit.fontawesome.com/6ed718fff7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Advance Search</title>
+  </head>
+  <body>
+    <nav id="navBar">
+      <section id="container">
+        <span id="logo">
+          <i class="fa-solid fa-earth-americas"></i>
+          <font class="title">Advance Search</font>
+        </span>
+        <section class="input grid oneRow center gap10">
+          <div class="fileTypeContainer nonSelect">
+            <span>
+              <font
+                >Formato:
+                <b class="b"> </b>
+              </font>
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
+            <ul id="fileTypeList" class="invisible">
+              <li id="texto">
+                <span class="maxSize">
+                  <font>• Texto: </font>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <div class="invisible grid oneColumn">
+                  <label class="maxSize"
+                    ><input
+                      type="radio"
+                      class="radio"
+                      value="pdf"
+                      name="fileType"
+                    />PDF</label
+                  >
+                  <label class="maxSize"
+                    ><input
+                      type="radio"
+                      class="radio"
+                      value="doc"
+                      name="fileType"
+                    />DOC</label
+                  >
+                  <label class="maxSize"
+                    ><input
+                      type="radio"
+                      class="radio"
+                      value="docx"
+                      name="fileType"
+                    />DOCX</label
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <input
+            type="search"
+            class="maxSize"
+            placeholder="Buscar..."
+            id="search"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
+        </section>
+      </section>
+    </nav>
+    <section class="results minSize">
+      <div class="loaderContainer maxSize flex center invisible">
+        <div class="flex center">
+          <span class="ldr-1"></span>
+          <span class="ldr-2"></span>
+          <span class="ldr-3"></span>
+          <span class="ldr-4"></span>
+          <span class="ldr-5"></span>
+          <span class="ldr-6"></span>
+          <span class="ldr-7"></span>
+          <span class="ldr-8"></span>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename = 'JS/home.js') }}"></script>
+    <template id="newResult">
+      <div class="resultContainer">
+        <h3><a href="" target="_blank"></a></h3>
+        <p></p>
+      </div>
+    </template>
+  </body>
 </html>
